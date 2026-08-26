@@ -117,3 +117,33 @@ Create:
 
 ```bash
 ~/.local/bin/toggle-sysmon
+
+#!/usr/bin/env bash
+
+CLASS="sysmon"
+
+ADDRESS="$(
+    hyprctl clients -j |
+    jq -r --arg class "$CLASS" '
+        first(.[] | select(.class == $class) | .address) // empty
+    '
+)"
+
+ACTIVE_CLASS="$(hyprctl activewindow -j | jq -r '.class // ""')"
+
+if [[ -n "$ADDRESS" ]]; then
+    if [[ "$ACTIVE_CLASS" == "$CLASS" ]]; then
+        hyprctl dispatch closewindow "address:$ADDRESS"
+    else
+        hyprctl dispatch focuswindow "address:$ADDRESS"
+    fi
+    exit
+fi
+
+kitty \
+    --class "$CLASS" \
+    --title "System Monitor" \
+    --override window_padding_width=0 \
+    --override window_margin_width=0 \
+    --override window_border_width=0 \
+    -e sysmon
