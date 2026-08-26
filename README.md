@@ -170,3 +170,25 @@ The launcher behaves as a toggle:
 - **Closed** → opens System Monitor
 - **Open but unfocused** → focuses System Monitor
 - **Focused** → closes System Monitor
+
+### Keybind
+
+For Hyprland Lua configurations, you can bind the launcher to any available shortcut.
+
+Example using `Super + Delete`:
+
+```lua
+local mainMod = "Super"
+
+hl.bind(mainMod .. " + Delete", hl.dsp.exec_cmd("~/.local/bin/toggle-sysmon"), {
+    description = "System Monitor",
+})
+```
+
+If `mainMod` is already defined elsewhere in your configuration, reuse the existing variable instead of defining it again.
+
+With the launcher above:
+
+- `Super + Delete` while closed → opens System Monitor
+- `Super + Delete` while open but unfocused → focuses it
+- `Super + Delete` while focused → closes it
