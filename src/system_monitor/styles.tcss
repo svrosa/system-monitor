@@ -1,0 +1,127 @@
+Screen {
+    background: #1A1B26;
+    color: #C0CAF5;
+}
+
+#titlebar {
+    height: 3;
+    margin: 0 1;
+    padding: 1 2 0 2;
+
+    background: #1F2335;
+    border-bottom: solid #BB9AF7;
+}
+
+#title {
+    width: 1fr;
+    height: 1;
+
+    color: #BB9AF7;
+    text-style: bold;
+}
+
+#uptime {
+    width: auto;
+    height: 1;
+
+    color: #C0CAF5;
+}
+
+
+#metrics-grid {
+    grid-size: 2;
+    grid-columns: 1fr 1fr;
+    grid-rows: 7 7 9;
+    grid-gutter: 0 2;
+    height: auto;
+    padding: 1 2 0 2;
+}
+
+.metric {
+    border: round #BB9AF7;
+    background: #1F2335;
+    padding: 0 2;
+}
+
+
+#process-title {
+    height: 1;
+    margin: 1 2 0 2;
+    padding: 0 1;
+    content-align: left middle;
+}
+
+#processes {
+    height: 1fr;
+    min-height: 14;
+    margin: 0 2 1 2;
+    border: round #BB9AF7;
+    background: #1F2335;
+    background-tint: transparent;
+}
+
+DataTable > .datatable--header {
+    background: #1F2335;
+    color: #BB9AF7;
+    text-style: bold;
+}
+
+DataTable > .datatable--even-row,
+DataTable > .datatable--odd-row {
+    background: #1F2335;
+}
+
+
+Footer {
+    background: #1F2335;
+    color: #C0CAF5;
+}
+
+Footer > .footer--key {
+    background: #BB9AF7;
+    color: #1A1B26;
+}
+
+Footer > .footer--description {
+    background: #1F2335;
+    color: #C0CAF5;
+}
+
+#processes:focus {
+    background: #1F2335;
+    border: round #BB9AF7;
+}
+
+#processes:focus > .datatable--cursor,
+#processes:focus > .datatable--hover,
+#processes:focus > .datatable--header-hover {
+    background: #1F2335;
+    color: #C0CAF5;
+}
+
+#processes,
+#processes:focus {
+    background: #1F2335;
+    background-tint: transparent;
+    border: round #BB9AF7;
+}
+
+#processes:focus > .datatable--header {
+    background: #292E42;
+    background-tint: transparent;
+}
+
+#process-search {
+    display: none;
+    height: 3;
+    margin: 0 2;
+    border: round #BB9AF7;
+    background: #1F2335;
+    color: #C0CAF5;
+}
+
+#process-search:focus {
+    border: round #BB9AF7;
+    background: #1F2335;
+    background-tint: transparent;
+}
