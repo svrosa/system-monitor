@@ -118,6 +118,8 @@ Create:
 ```bash
 ~/.local/bin/toggle-sysmon
 
+With
+
 #!/usr/bin/env bash
 
 CLASS="sysmon"
@@ -147,3 +149,6 @@ kitty \
     --override window_margin_width=0 \
     --override window_border_width=0 \
     -e sysmon
+
+Make it executable
+chmod +x ~/.local/bin/toggle-sysmon
