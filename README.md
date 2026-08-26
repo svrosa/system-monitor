@@ -113,13 +113,15 @@ The example below uses Kitty and launches the monitor with a dedicated `sysmon` 
 
 ### Launcher
 
-Create:
+Create the launcher script:
+
+```text
+~/.local/bin/toggle-sysmon
+```
+
+Add:
 
 ```bash
-~/.local/bin/toggle-sysmon
-
-With
-
 #!/usr/bin/env bash
 
 CLASS="sysmon"
@@ -131,7 +133,10 @@ ADDRESS="$(
     '
 )"
 
-ACTIVE_CLASS="$(hyprctl activewindow -j | jq -r '.class // ""')"
+ACTIVE_CLASS="$(
+    hyprctl activewindow -j |
+    jq -r '.class // ""'
+)"
 
 if [[ -n "$ADDRESS" ]]; then
     if [[ "$ACTIVE_CLASS" == "$CLASS" ]]; then
@@ -139,6 +144,7 @@ if [[ -n "$ADDRESS" ]]; then
     else
         hyprctl dispatch focuswindow "address:$ADDRESS"
     fi
+
     exit
 fi
 
@@ -149,6 +155,16 @@ kitty \
     --override window_margin_width=0 \
     --override window_border_width=0 \
     -e sysmon
+```
 
-Make it executable
+Make it executable:
+
+```bash
 chmod +x ~/.local/bin/toggle-sysmon
+```
+
+The launcher behaves as a toggle:
+
+- **Closed** → opens System Monitor
+- **Open but unfocused** → focuses System Monitor
+- **Focused** → closes System Monitor
