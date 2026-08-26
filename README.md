@@ -140,9 +140,11 @@ ACTIVE_CLASS="$(
 
 if [[ -n "$ADDRESS" ]]; then
     if [[ "$ACTIVE_CLASS" == "$CLASS" ]]; then
-        hyprctl dispatch closewindow "address:$ADDRESS"
+        hyprctl dispatch \
+            "hl.dsp.window.close({ window = \"address:$ADDRESS\" })"
     else
-        hyprctl dispatch focuswindow "address:$ADDRESS"
+        hyprctl dispatch \
+            "hl.dsp.focus({ window = \"address:$ADDRESS\" })"
     fi
 
     exit
