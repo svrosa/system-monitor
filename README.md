@@ -2,7 +2,19 @@
 
 Terminal-based Linux system monitor built with Textual.
 
-[Screenshot]
+## Screenshots
+
+### Default
+
+<p align="center">
+  <img src="assets/default.png" alt="System Monitor default view" width="1100">
+</p>
+
+### Hyprland Floating Popup
+
+<p align="center">
+  <img src="assets/float.png" alt="System Monitor floating Hyprland popup" width="900">
+</p>
 
 ## Features
 
