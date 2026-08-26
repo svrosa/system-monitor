@@ -2,19 +2,10 @@
 
 Terminal-based Linux system monitor built with Textual.
 
-## Screenshots
-
-### Default
-
 <p align="center">
   <img src="assets/default.png" alt="System Monitor default view" width="1100">
 </p>
 
-### Hyprland Floating Popup
-
-<p align="center">
-  <img src="assets/float.png" alt="System Monitor floating Hyprland popup" width="900">
-</p>
 
 ## Features
 
@@ -118,6 +109,10 @@ PgDn    Page down
 r       Refresh
 
 ## Optional Hyprland Integration
+
+<p align="center">
+  <img src="assets/float.png" alt="System Monitor running as a floating Hyprland popup" width="900">
+</p>
 
 `sysmon` works as a normal terminal application, but it can also be launched as a dedicated floating popup under Hyprland.
 
